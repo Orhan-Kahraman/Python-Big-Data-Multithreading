@@ -1,0 +1,6 @@
+Thread sayısının girileceği bir araç
+Sütunların seçilmesini sağlayan bir araç
+Benzerlik oranının (Threshold değeri) seçilebileceği / girilebileceği bir araç
+Her bir thread’in çalışma zamanını ve toplam çalışma zamanını gösteren araçlar
+Sonuçların açıkça ekranda gösterilebileceği bir araç
+Her thread’in çalışma zamanı ve tüm thread’ler için toplam çalışma zamanı bilgileri uygulama arayüzünde gösterilmelidir.
