@@ -49,6 +49,8 @@ class app_window(QWidget):
         self.additem4.setValidator(validator)
         self.additem5.setValidator(validator)
         self.additem6.setValidator(validator)
+        self.addthreadNum.setValidator(
+            QIntValidator(bottom=0, top=10, parent=self))
 
         # Maksimum sayının 100 olmasını sağlamak
         self.additem1.cursorPositionChanged.connect(
@@ -63,13 +65,15 @@ class app_window(QWidget):
             lambda: check_input(self.additem5.text(), self.additem5))
         self.additem6.cursorPositionChanged.connect(
             lambda: check_input(self.additem6.text(), self.additem6))
+        self.addthreadNum.cursorPositionChanged.connect(
+            lambda: check_input(self.addthreadNum.text(), self.addthreadNum, thread_content=True))
 
         # Thread EKSİK!!!
 
         # Uygulama butonu
         self.myBut = QtWidgets.QPushButton(text="Uygula")
         self.myBut.clicked.connect(lambda: add_percentage(additem1=self.additem1, additem2=self.additem2,
-                                   additem3=self.additem3, additem4=self.additem4, additem5=self.additem5, additem6=self.additem6))
+                                   additem3=self.additem3, additem4=self.additem4, additem5=self.additem5, additem6=self.additem6, addthreadNum=self.addthreadNum))
 
         # Widgetları düzenlemek
         fbox = QtWidgets.QFormLayout()

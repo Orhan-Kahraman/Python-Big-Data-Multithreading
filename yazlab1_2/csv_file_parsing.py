@@ -44,13 +44,14 @@ class CsvSettings():
 
         if (os.path.isfile("new_rows.csv")):
             self.isdata_exist = True
-            data = pd.read_csv("new_rows.csv", index_col=0)
+            data = pd.read_csv("new_rows.csv", index_col=0,
+                               dtype={'Complaint ID': 'str'})
             print("Dosya kullanıma hazır.")
             return data
         else:
             print("Dosya Oluşturulmamış.\nYeni dosya oluşturluyor.\nLütfen bekleyiniz.. ")
             self.csv_parser()
-            self.use_new_rows()
+            return self.use_new_rows()
 
     def get_column_names(self):
         data = self.use_new_rows()
